@@ -1,0 +1,3 @@
+CREATE DATABASE topit;
+CREATE USER topituser WITH PASSWORD 'topit';
+GRANT ALL PRIVILEGES ON DATABASE topit TO topituser;
