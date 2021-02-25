@@ -10,3 +10,13 @@ from . import serializers
 class UserListView(generics.ListAPIView):
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.UserSerializer
+
+
+class DataList(generics.ListAPIView):
+    queryset = models.Data.objects.all()
+    serializer_class = serializers.DataSerializer
+
+
+class DataDetail(generics.RetrieveDestroyAPIView):
+    queryset = models.Data.objects.all()
+    serializer_class = serializers.DataSerializer

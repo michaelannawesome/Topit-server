@@ -10,3 +10,18 @@ class UserSerializer(serializers.ModelSerializer):
             "email",
             "username",
         )
+
+
+class DataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Data
+        fields = (
+            "id",
+            "title",
+            "source",
+            "props",
+            "description",
+            "category",
+            "video_url",
+            "user",
+        )
