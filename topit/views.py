@@ -6,7 +6,7 @@ from . import serializers
 
 # Create your views here.
 
-
+# User CRUD
 class UserListView(generics.ListAPIView):
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.UserSerializer
@@ -17,6 +17,19 @@ class UserListView(generics.ListAPIView):
     """
     # def filter_queryset(self, request, queryset, view):
     #     return queryset.filter(owner=request.user)
+
+
+class UserUpdate(generics.RetrieveUpdateAPIView):
+    queryset = models.CustomUser.objects.all()
+    serializer_class = serializers.UserSerializer
+
+
+class UserDelete(generics.DestroyAPIView):
+    queryset = models.CustomUser.objects.all()
+    serializer_class = serializers.UserSerializer
+
+
+# Data CRUD
 
 
 class DataList(generics.ListAPIView):
@@ -36,5 +49,15 @@ class DataDetail(generics.RetrieveDestroyAPIView):
 
 
 class DataCreate(generics.CreateAPIView):
+    queryset = models.Data.objects.all()
+    serializer_class = serializers.DataSerializer
+
+
+class DataUpdate(generics.RetrieveUpdateAPIView):
+    queryset = models.Data.objects.all()
+    serializer_class = serializers.DataSerializer
+
+
+class DataDelete(generics.DestroyAPIView):
     queryset = models.Data.objects.all()
     serializer_class = serializers.DataSerializer
