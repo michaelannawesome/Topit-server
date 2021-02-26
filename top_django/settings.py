@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "topit",
     "corsheaders",
     "djoser",
+    "django_filters",
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
@@ -152,6 +153,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         # What we'll use for our API
         "rest_framework.authentication.TokenAuthentication",
