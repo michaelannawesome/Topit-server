@@ -23,5 +23,5 @@ class DataSerializer(serializers.ModelSerializer):
             "description",
             "category",
             "video_url",
-            "user",
+            "name",
         )
